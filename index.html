@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/images/favicon-32x32.png"
+    />
+    <!-- boxicons  -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- native css -->
+    <link rel="stylesheet" href="./public/css/style.css" />
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  </head>
+  <body class="bg-slate-50 font-poppins">
+    <!-- header -->
+    <header
+      id="header"
+      class="fixed z-[999] w-full bg-transparent py-1 md:py-3 lg:py-4"
+    >
+      <div class="container mx-auto">
+        <div
+          class="navbar relative flex items-center justify-between md:items-center md:gap-x-12"
+        >
+          <div class="logo cursor-pointer">
+            <img
+              class="w-20 md:w-24 lg:w-28"
+              src="./public/images/logo.svg"
+              alt=""
+            />
+          </div>
+          <nav
+            id="navigation"
+            class="navigation pointer-events-none absolute top-10 right-1 w-56 rounded-md bg-dark-violet p-7 opacity-0 shadow-xl transition-all duration-300 ease-in-out md:pointer-events-auto md:static md:w-full md:bg-transparent md:p-0 md:opacity-100 md:shadow-none"
+            data-visible="false"
+          >
+            <ul
+              class="menu flex flex-col gap-y-4 md:flex-row md:items-center md:gap-x-8"
+            >
+              <li class="text-center">
+                <a
+                  class="nav-link text-hover text-[.8rem] font-semibold uppercase text-holy-blur md:text-[.7rem] md:text-very-dark-blue"
+                  href="#"
+                  >Features</a
+                >
+              </li>
+              <li class="text-center">
+                <a
+                  class="nav-link text-hover text-[.8rem] font-semibold uppercase text-holy-blur md:text-[.7rem] md:text-very-dark-blue"
+                  href="#"
+                  >Pricing</a
+                >
+              </li>
+              <li class="text-center">
+                <a
+                  class="nav-link text-hover text-[.8rem] font-semibold uppercase text-holy-blur md:text-[.7rem] md:text-very-dark-blue"
+                  href="#"
+                  >Resources</a
+                >
+              </li>
+              <div
+                class="btn-navigation mt-3 border-t border-soft-gray md:ml-auto md:mt-0 md:flex md:border-none"
+              >
+                <button
+                  type="submit"
+                  class="btn-signup text-hover mt-3 block w-full bg-transparent px-7 text-[.8rem] font-semibold uppercase text-holy-blur md:mt-0 md:w-[inherit] md:px-5 md:text-[.7rem] md:text-very-dark-blue"
+                >
+                  Login
+                </button>
+                <button
+                  type="submit"
+                  class="btn-signup bg-hover mt-3 block w-full rounded-full bg-cyan px-7 py-[10px] text-[.8rem] font-semibold uppercase text-holy-blur md:mt-0 md:w-[inherit] md:py-2 md:px-5 md:text-[.7rem] lg:px-7"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </ul>
+          </nav>
+          <div
+            class="menu-hamburger cursor-pointer md:hidden"
+            aria-expanded="false"
+            aria-controls="navigation"
+          >
+            <i class="bx bx-menu-alt-right icon text-3xl text-dark"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- content -->
+    <section class="content pt-20 md:overflow-hidden md:pt-28">
+      <div class="container mx-auto">
+        <div
+          class="rows-content flex flex-wrap gap-y-10 md:flex-nowrap md:items-center"
+        >
+          <div
+            class="cols-content overflow-hidden md:order-last md:basis-1/2 md:overflow-visible"
+          >
+            <img
+              class="max-w-md md:w-full md:translate-x-10 lg:max-w-xl lg:translate-x-16"
+              src="./public/images/illustration-working.svg"
+              alt=""
+            />
+          </div>
+          <div class="cols-content text-center md:basis-1/2 md:text-left">
+            <h1
+              class="title font-serif text-4xl font-extrabold text-very-dark-violet lg:text-6xl"
+            >
+              More than just shorter links
+            </h1>
+            <p
+              class="mt-5 mb-8 text-base font-medium text-grayish-violet lg:pr-48"
+            >
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <button
+              class="btn-content bg-hover cursor-pointer rounded-full bg-cyan px-10 py-3 text-base font-semibold text-holy-blur md:px-8 md:text-sm"
+              type="submit"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- form -->
+    <section class="form-link py-24">
+      <div class="container mx-auto">
+        <div
+          class="rows-form borders rounded-lg bg-dark-violet bg-hero-shorten-mobile bg-right-top bg-no-repeat p-6 lg:bg-hero-shorten-desktop lg:bg-cover lg:p-8"
+        >
+          <form
+            class="flex flex-wrap gap-y-4 md:flex-nowrap md:gap-x-5"
+            action="#"
+          >
+            <input
+              class="basis-full rounded-md p-3 md:basis-3/4 lg:basis-5/6 lg:placeholder:text-sm"
+              type="text"
+              name="txt"
+              id="txt"
+              placeholder=" Shorten a link here..."
+            />
+            <button
+              class="btn-shorten bg-hover basis-full cursor-pointer rounded-md bg-cyan px-10 py-3 text-base font-semibold text-holy-blur md:basis-1/4 md:text-sm md:placeholder:text-sm lg:basis-1/6"
+            >
+              Shorten It!
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="statistics pb-20 lg:pt-16 lg:pb-40">
+      <div class="container mx-auto">
+        <h1
+          class="title text-center font-serif text-3xl font-extrabold text-very-dark-violet"
+        >
+          Advanced Statistics
+        </h1>
+        <p class="mt-5 text-center font-medium text-grayish-violet md:px-36">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+        <div
+          class="rows-statistics relative mt-24 flex flex-wrap justify-center gap-y-24 after:absolute after:top-0 after:right-1/2 after:-z-10 after:h-full after:w-2 after:translate-x-1/2 after:bg-cyan after:content-[''] md:after:-translate-y-4 lg:flex-nowrap lg:justify-between lg:after:top-1/2 lg:after:h-2 lg:after:w-full lg:after:translate-y-1/2"
+        >
+          <div
+            class="cols-statistics relative max-w-sm rounded-md bg-white p-8 shadow-3xl md:scale-90 lg:max-w-xs lg:scale-100"
+          >
+            <div class="card text-center lg:text-left">
+              <div
+                class="images-details absolute -top-9 right-1/2 inline-block translate-x-1/2 scale-110 rounded-full bg-dark-violet p-4 lg:right-[80%] lg:scale-90"
+              >
+                <img src="./public/images/icon-brand-recognition.svg" alt="" />
+              </div>
+              <h3
+                class="mt-10 font-serif text-2xl font-extrabold text-very-dark-violet lg:mt-5 lg:text-lg"
+              >
+                Brand Recognition
+              </h3>
+              <p
+                class="mt-4 text-base font-medium text-grayish-violet lg:text-sm"
+              >
+                Boost your brand recognition with each click. Generic links
+                don’t mean a thing. Branded links help instil confidence in your
+                content.
+              </p>
+            </div>
+          </div>
+          <div
+            class="cols-statistics relative max-w-sm rounded-md bg-white p-8 shadow-3xl md:scale-90 lg:max-w-xs lg:translate-y-8 lg:scale-100"
+          >
+            <div class="card text-center lg:text-left">
+              <div
+                class="images-details absolute -top-9 right-1/2 inline-block translate-x-1/2 scale-110 rounded-full bg-dark-violet p-4 lg:right-[80%] lg:scale-90"
+              >
+                <img src="./public/images/icon-detailed-records.svg" alt="" />
+              </div>
+              <h3
+                class="mt-10 font-serif text-2xl font-extrabold text-very-dark-violet lg:mt-5 lg:text-lg"
+              >
+                Detailed Records
+              </h3>
+              <p
+                class="mt-4 text-base font-medium text-grayish-violet lg:text-sm"
+              >
+                Gain insights into who is clicking your links. Knowing when and
+                where people engage with your content helps inform better
+                decisions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="cols-statistics relative max-w-sm rounded-md bg-white p-8 shadow-3xl md:scale-90 lg:max-w-xs lg:translate-y-16 lg:scale-100"
+          >
+            <div class="card text-center lg:text-left">
+              <div
+                class="images-details absolute -top-9 right-1/2 inline-block translate-x-1/2 scale-110 rounded-full bg-dark-violet p-4 lg:right-[80%] lg:scale-90"
+              >
+                <img src="./public/images/icon-fully-customizable.svg" alt="" />
+              </div>
+              <h3
+                class="mt-10 font-serif text-2xl font-extrabold text-very-dark-violet lg:mt-5 lg:text-lg"
+              >
+                Fully Customizable
+              </h3>
+              <p
+                class="mt-4 text-base font-medium text-grayish-violet lg:text-sm"
+              >
+                Improve brand awareness and content discoverability through
+                customizable links, supercharging audience engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- features -->
+    <section
+      class="features translate-y-1 bg-dark-violet bg-hero-boost-mobile bg-cover bg-no-repeat py-24 md:py-16 lg:bg-hero-boost-desktop lg:py-24"
+    >
+      <div class="container mx-auto">
+        <div class="rows-features flex flex-wrap gap-y-6">
+          <div class="cols-features basis-full text-center">
+            <h1 class="title font-serif text-3xl font-semibold text-holy-blur">
+              Boost your links today
+            </h1>
+          </div>
+          <div class="cols-features mx-auto">
+            <button
+              class="btn-features bg-hover basis-full cursor-pointer rounded-full bg-cyan px-10 py-3 text-base font-semibold text-holy-blur md:px-8 md:text-sm"
+              type="submit"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer bg-very-dark-violet py-16">
+      <div class="container mx-auto">
+        <div
+          class="rows-footer flex flex-col items-center justify-center gap-y-10 md:flex-row md:flex-wrap md:items-start md:gap-y-16 lg:justify-between"
+        >
+          <div class="cols-footer mb-5 md:basis-1/3 lg:basis-1/4">
+            <img class="lg:w-24" src="./public/images/logo-footer.svg" alt="" />
+          </div>
+          <div
+            class="cols-footer flex flex-col gap-y-2 text-center md:basis-1/4 md:text-left lg:basis-auto"
+          >
+            <h3 class="mb-2 text-xl font-semibold text-holy-blur lg:text-base">
+              Features
+            </h3>
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Link Shortening</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Branded Links</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Analytics</a
+            >
+          </div>
+          <div
+            class="cols-footer flex flex-col gap-y-2 text-center md:basis-1/4 md:text-left lg:basis-auto"
+          >
+            <h3 class="mb-2 text-xl font-semibold text-holy-blur lg:text-base">
+              Resources
+            </h3>
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Blog</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Developers</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Support</a
+            >
+          </div>
+          <div
+            class="cols-footer flex flex-col gap-y-2 text-center md:basis-1/4 md:text-left lg:basis-auto"
+          >
+            <h3 class="mb-2 text-xl font-semibold text-holy-blur lg:text-base">
+              Company
+            </h3>
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >About</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Our Team</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Careers</a
+            >
+            <a
+              class="text-hover text-base font-medium text-grayish-violet lg:text-sm"
+              href="#"
+              >Contact</a
+            >
+          </div>
+          <div class="cols-footer lg:basis-auto">
+            <div class="social-media flex gap-x-5">
+              <img
+                class="cursor-pointer hover:opacity-75 lg:w-5"
+                src="./public/images/icon-facebook.svg"
+                alt=""
+              />
+              <img
+                class="cursor-pointer hover:opacity-75 lg:w-5"
+                src="./public/images/icon-twitter.svg"
+                alt=""
+              />
+              <img
+                class="cursor-pointer hover:opacity-75 lg:w-5"
+                src="./public/images/icon-pinterest.svg"
+                alt=""
+              />
+              <img
+                class="cursor-pointer hover:opacity-75 lg:w-5"
+                src="./public/images/icon-instagram.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="attribution mt-10 text-center text-xs text-soft-gray lg:translate-y-7 lg:text-[.65rem]"
+        >
+          Challenge by
+          <a
+            class="text-holy-blur"
+            href="https://www.frontendmentor.io?ref=challenge"
+            target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a class="text-holy-blur" href="https://github.com/JfeStudio">Maman</a
+          >.
+        </div>
+      </div>
+    </div>
+    <script src="./public/js/main.js"></script>
+  </body>
+</html>
